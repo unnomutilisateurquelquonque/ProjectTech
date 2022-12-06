@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IBM97kTVJLeWaRm+7M/lnHXixkIExqVYdHfCwYhEuLjPr/LaDXBLk1Rp3JeTkRSmMq5PSkkFno11LDxDf0iXvQ==",
+  "dgSpecHash": "0oEBujSqxXvlXbdpYq5kT4vDHrV2qE4Xb0DcD4pyG8bRVqDEVmD7O66qLkQQQTo9ZtZzQjzjWdCmbQoqSeKwmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxde\\Desktop\\TechEmergente\\ProjectTech\\ProjectTech.fsproj",
+  "projectFilePath": "C:\\Users\\maxde\\Desktop\\TechEmergente\\project\\ProjectTech\\ProjectTech.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxde\\.nuget\\packages\\fsharp.core\\7.0.0\\fsharp.core.7.0.0.nupkg.sha512"
   ],

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxde\\Desktop\\TechEmergente\\ProjectTech\\ProjectTech.fsproj": {}
+    "C:\\Users\\maxde\\Desktop\\TechEmergente\\project\\ProjectTech\\ProjectTech.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\maxde\\Desktop\\TechEmergente\\ProjectTech\\ProjectTech.fsproj": {
+    "C:\\Users\\maxde\\Desktop\\TechEmergente\\project\\ProjectTech\\ProjectTech.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxde\\Desktop\\TechEmergente\\ProjectTech\\ProjectTech.fsproj",
+        "projectUniqueName": "C:\\Users\\maxde\\Desktop\\TechEmergente\\project\\ProjectTech\\ProjectTech.fsproj",
         "projectName": "ProjectTech",
-        "projectPath": "C:\\Users\\maxde\\Desktop\\TechEmergente\\ProjectTech\\ProjectTech.fsproj",
+        "projectPath": "C:\\Users\\maxde\\Desktop\\TechEmergente\\project\\ProjectTech\\ProjectTech.fsproj",
         "packagesPath": "C:\\Users\\maxde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxde\\Desktop\\TechEmergente\\ProjectTech\\obj\\",
+        "outputPath": "C:\\Users\\maxde\\Desktop\\TechEmergente\\project\\ProjectTech\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
