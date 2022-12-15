@@ -63,7 +63,7 @@ let TrouverY(colonneChoisie:int) =
     valeurRetour
 
 //vérifie si le choix entrer par l'usager est bon
-let verificationJoueur()=
+let VerificationJoueur()=
     try
         x <- Console.ReadLine() |> int
     with
@@ -97,13 +97,13 @@ let Jouer() =
         then printfn "Tour: Joueur X" 
              printfn "Colone"
              while tour do
-                verificationJoueur()
+                VerificationJoueur()
              tour<- true
              joueur1<- false
         else printfn "Tour: Joueur O"
              printfn "Colone"
              while tour do
-                verificationJoueur()
+                VerificationJoueur()
              tour<- true
              joueur1<- true
 
@@ -282,7 +282,7 @@ let VerifierVictoire() =
 
 
 
-
+//Boucle de jeu
 while partieEncour do
     AfficherTableau()
     Jouer()

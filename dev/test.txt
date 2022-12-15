@@ -1,0 +1,127 @@
+input usager: donnée attendue -> 0 à 6 inclusivement
+dernierJeton: donnée attendue -> position dans la grille [6,7]
+
+Test 1:
+    Afficher la grille de jeux de sorte à ce que les nombres son bien enlignier avec la grille.
+    Fonction: AfficherTableau()
+    Donnee entré: 
+Test 2:
+    Vérification que la variable distanceG dans VerifierLigne ne sort pas du tableau
+    Fonction: VerifierLigne()
+    Donnee entré: dernierJeton
+Test 3:
+    Vérification que la variable distanceD dans VerifierLigne ne sort pas du tableau
+    Fonction: VerifierLigne()
+    Donnee entré: dernierJeton
+Test 4:
+    Vérification que la variable distanceD dans VerifierDiagonalBH ne sort pas du tableau
+    Fonction: VerifierDiagonalBH()
+    Donnee entré: dernierJeton
+Test 5:
+    Vérification que la variable distanceG dans VerifierDiagonalBH ne sort pas du tableau
+    Fonction: VerifierDiagonalBH()
+    Donnee entré: dernierJeton
+Test 6:
+    Vérification que la variable distanceD dans VerifierDiagonalHB ne sort pas du tableau
+    Fonction: VerifierDiagonalHB()
+    Donnee entré: dernierJeton
+Test 7:
+    Vérification que la variable distanceG dans VerifierDiagonalHB ne sort pas du tableau
+    Fonction: VerifierDiagonalHB()
+    Donnee entré: dernierJeton
+Test 8:
+    Vérification que la variable distanceD dans VerifierColone ne sort pas du tableau
+    Fonction: VerifierColone()
+    Donnee entré: dernierJeton
+Test 9:
+    Victoire du joueur fonctionel dans VerifierLigne
+    Fonction: VerifierLigne()
+    Donnee entré: dernierJeton
+Test 10:
+    Victoire du joueur fonctionel dans VerifierDiagonalBH
+    Fonction: VerifierDiagonalBH()
+    Donnee entré: dernierJeton
+Test 11:
+    Victoire du joueur fonctionel dans VerifierDiagonalHB
+    Fonction: VerifierDiagonalHB()
+    Donnee entré: dernierJeton
+Test 12:
+    Victoire du joueur fonctionel dans VerifierColone
+    Fonction: VerifierColone()
+    Donnee entré: dernierJeton
+Test 13:
+    Vérifier que la donne insérer est celle du bon joueur
+    Fonction: Jouer()
+    Donnee entré: Colone choisis (X)
+Test 14:
+    Changement de joueur fonctionel
+    Fonction: Jouer()
+    Donnee entré: Colone choisis (X)
+Test 15:
+    La donnée entrer est un nombre
+    Fonction: VerificationJoueur()
+    Donnee entré: dernierJeton
+Test 16:
+    La donnée entrer est entre 0 et 6 inclusivement
+    Fonction: VerificationJoueur()
+    Donnee entré: input usager 
+Test 17:
+    Tester si le joueur qui entre une mauvaise donnée peut en choisir une nouvelle
+    Fonction: VerificationJoueur()
+    Donnee entré: input usager 
+Test 18:
+    Est-ce que le joueur qui a gagner est le bon
+    Fonction: VerifierVictoire()
+    Donnee entré: partieEncour
+Test 19: 
+    Le joueur ne peut pas insérer une donné dans une colone pleine
+    Fonction: VerificationJoueur()
+    Donnee entré: input usager 
+Test 20:
+    Le joueur ne peut pas overide une case qui possède déja une donnée
+    Fonction: VerificationJoueur()
+    Donnee entré: input usager 
+Test 21:
+    L'insertion est toujour dans la case la plus basse de la colonne Choisis
+    Fonction: TrouverY() 
+    Donnee entré: input usager 
+Test 22:
+    La case à vérifier est la bonne dans le VerifierDiagonalBH avec la variable distanceD
+    Fonction: VerifierDiagonalBH()
+    Donnee entré: dernierJeton
+Test 23:
+    La case à vérifier est la bonne dans le VerifierDiagonalBH avec la variable distanceG
+    Fonction: VerifierDiagonalBH()
+    Donnee entré: dernierJeton
+Test 24:
+    La case à vérifier est la bonne dans le VerifierDiagonalHB avec la variable distanceD
+    Fonction: VerifierDiagonalHB()
+    Donnee entré: dernierJeton
+Test 25:
+    La case à vérifier est la bonne dans le VerifierDiagonalHB avec la variable distanceG
+    Fonction: VerifierDiagonalHB()
+    Donnee entré: dernierJeton
+Test 26:
+    réinitialisation des variables pour les boucles et les distances dans verifierLigne
+    Fonction: VerifierLigne()
+    Donnee entré: dernierJeton
+Test 27:
+    réinitialisation des variables pour les boucles et les distances dans VerifierDiagonalBH
+    Fonction: VerifierDiagonalBH()
+    Donnee entré: dernierJeton
+Test 28:
+    réinitialisation des variables pour les boucles et les distances dans VerifierDiagonalHB
+    Fonction: VerifierDiagonalHB()
+    Donnee entré: dernierJeton
+Test 29:
+    réinitialisation des variables pour les boucles et les distances dans VerifierColone
+    Fonction: VerifierColone()
+    Donnee entré: dernierJeton
+Test 30:
+    Vérification du cas d'un match null ou la grille est pleine et il y a aucun gagnant
+    Fonction: VerifierVictoire()
+     Donnee entré:
+Test 31:
+    La fonction TrouverY retourne le la valeur de y la plus grande de la colone et retourne -1 si la colone est pleine
+    Fonction: TrouverY()
+     Donnee entré: Input usager
