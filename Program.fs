@@ -94,13 +94,13 @@ let verificationJoueur()=
 //tour du joueur
 let Jouer() =
     if joueur1 
-        then printfn "Tour: Joueur1" 
+        then printfn "Tour: Joueur X" 
              printfn "Colone"
              while tour do
                 verificationJoueur()
              tour<- true
              joueur1<- false
-        else printfn "Tour: Joueur2"
+        else printfn "Tour: Joueur O"
              printfn "Colone"
              while tour do
                 verificationJoueur()
@@ -108,7 +108,7 @@ let Jouer() =
              joueur1<- true
 
 //vérifie la ligne
-let Verifierligne()=
+let VerifierLigne()=
     //jeton le plus éloignier sur la droite en bas  
     donne<- grilleJeu[dernierJeton[1],dernierJeton[0]]
     distanceD<-0
@@ -121,7 +121,8 @@ let Verifierligne()=
                     then distanceD<- distanceD+1
                     else distanceD<- distanceD-1
                          loopligne<-false
-            else loopligne<-false
+            else distanceD<- distanceD-1
+                 loopligne<-false   
     loopligne<-true
 
     //jeton le plus éloignier sur gauche       
@@ -132,7 +133,8 @@ let Verifierligne()=
                     then distanceG<- distanceG+1
                     else distanceG<- distanceG-1
                          loopligne<-false
-            else loopligne<-false
+            else distanceG<- distanceG-1
+                 loopligne<-false
     loopligne<-true
 
     //vérifier ligne
@@ -140,32 +142,27 @@ let Verifierligne()=
         then partieEncour<- false
              AfficherTableau()
              if joueur1
-                then printfn "le joueur 2 a gagnier"
-                else printfn "le joueur 1 a gagnier"
-//vérifie la ligne
+                then printfn "le joueur 0 a gagner"
+                else printfn "le joueur X a gagner"
+
+//vérifie la diagonal haut vers le bas
 let VerifierDiagonalHB()=
+
     //jeton le plus éloignier sur droite   
-    printf "DernierJeton[0] : "
-    printfn "%i" dernierJeton[0]  
-    printf "DernierJeton[1] : "
-    printfn "%i" dernierJeton[1] 
-    printf "Distance droite : "
-    printfn "%i" distanceD
-    printf "Distance gauche : "
-    printfn "%i" distanceG
     donne<- grilleJeu[dernierJeton[1],dernierJeton[0]]
-    printfn "%s" donne
     distanceD<-0
     distanceG<-0
     //jeton le plus éloignier sur la droite
     while loopligne do
         if (dernierJeton[0]+distanceD) <= 6 && (dernierJeton[1]+distanceD) <=5
             then
-                if grilleJeu[dernierJeton[1]-distanceD,(dernierJeton[0]+distanceD)] = donne
+                if grilleJeu[dernierJeton[1]+distanceD,(dernierJeton[0]+distanceD)] = donne
                     then distanceD<- distanceD+1
                     else distanceD<- distanceD-1
                          loopligne<-false
-            else loopligne<-false
+            else 
+            distanceD<- distanceD-1
+            loopligne<-false
     loopligne<-true
 
     //jeton le plus éloignier sur gauche       
@@ -175,9 +172,10 @@ let VerifierDiagonalHB()=
                 if grilleJeu[dernierJeton[1]-distanceG,dernierJeton[0]-distanceG] = donne
                     then distanceG<- distanceG+1
                     else distanceG<- distanceG-1
-                         printfn "%i" distanceG
                          loopligne<-false
-            else loopligne<-false
+            else 
+            distanceG<- distanceG-1
+            loopligne<-false
     loopligne<-true
 
     //vérifier ligne
@@ -185,15 +183,89 @@ let VerifierDiagonalHB()=
         then partieEncour<- false
              AfficherTableau()
              if joueur1
-                then printfn "le joueur 2 a gagnier"
-                else printfn "le joueur 1 a gagnier"
+                then printfn "le joueur O a gagner"
+                else printfn "le joueur X a gagner"
 
+//vérifie la diagonal de Bas en HAUT
+let VerifierDiagonalBH()=
+    //jeton le plus éloignier sur droite   
+    distanceD<-0
+    distanceG<-0
+    //jeton le plus éloignier sur la droite
+    while loopligne do
+        if (dernierJeton[0]-distanceD) >= 0 && (dernierJeton[1]+distanceD) <=5
+            then
+                if grilleJeu[dernierJeton[1]+distanceD,(dernierJeton[0]-distanceD)] = donne
+                    then distanceD<- distanceD+1
+                    else distanceD<- distanceD-1
+                         loopligne<-false
+            else 
+            distanceD<- distanceD-1
+            loopligne<-false
+    loopligne<-true
+
+    //jeton le plus éloignier sur gauche       
+    while loopligne do
+        if (dernierJeton[0]+distanceG) <= 6 && (dernierJeton[1]-distanceG) >= 0
+            then
+                if grilleJeu[dernierJeton[1]-distanceG,dernierJeton[0]+distanceG] = donne
+                    then distanceG<- distanceG+1
+                    else distanceG<- distanceG-1
+                         loopligne<-false
+            else 
+            distanceG<- distanceG-1
+            loopligne<-false
+    loopligne<-true
+
+    //vérifier ligne
+    if (distanceD+distanceG+1) >=4
+        then partieEncour<- false
+             AfficherTableau()
+             if joueur1
+                then printfn "le joueur O a gagner"
+                else printfn "le joueur X a gagner"
+
+//vérifie la ligne
+let VerifierColone()=
+    //jeton le plus éloignier sur la droite en bas  
+    donne<- grilleJeu[dernierJeton[1],dernierJeton[0]]
+    //distanceD est la distance entre le jeton du bas et le jeton placer
+    distanceD<-0
+    //jeton le plus éloignier sur la droite
+    while loopligne do
+        printf "DernierJeton[0] : "
+        printfn "%i" dernierJeton[0]  
+        printf "DernierJeton[1] : "
+        printfn "%i" dernierJeton[1] 
+        printf "Distance droite : "
+        printfn "%i" distanceD
+        donne<- grilleJeu[dernierJeton[1],dernierJeton[0]]
+        printfn "%s" donne
+        if (dernierJeton[1]+distanceD) <= 5
+            then
+                if grilleJeu[dernierJeton[1]+distanceD,dernierJeton[0]] = donne
+                    then distanceD<- distanceD+1
+                    else distanceD<- distanceD-1
+                         loopligne<-false
+            else distanceD<- distanceD-1
+                 loopligne<-false   
+    loopligne<-true
+
+        //vérifier ligne
+    if (distanceD+1) >=4
+        then partieEncour<- false
+             AfficherTableau()
+             if joueur1
+                then printfn "le joueur O a gagner"
+                else printfn "le joueur X a gagner"
 
 
 //vérifie si la partie est terminé
 let VerifierVictoire() =  
-    Verifierligne()
+    VerifierLigne()
+    VerifierColone()
     VerifierDiagonalHB()
+    VerifierDiagonalBH()
 
     //vérifie si la grille est pleine
     while loopcolonne do
